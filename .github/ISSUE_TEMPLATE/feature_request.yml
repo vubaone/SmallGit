@@ -1,0 +1,71 @@
+name: Feature request
+description: Suggest a new capability or improvement
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. For anything bigger than a small UI
+        tweak, please file the issue **before** writing code so we can
+        align on scope.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What can't you do today, or what is painful?
+      placeholder: |
+        I want to reorder commits during a rebase, but SmallGit only
+        supports linear rebase via the shell.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: How would you like SmallGit to work? Be concrete.
+      placeholder: |
+        An interactive rebase sheet listing the commits between the
+        target ref and HEAD, with drag-to-reorder and per-row actions
+        (pick / reword / squash / fixup / drop / edit).
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches you ruled out, and why.
+
+  - type: input
+    id: smartgit-equivalent
+    attributes:
+      label: SmartGit / Fork / GitKraken equivalent (if any)
+      description: |
+        SmallGit aims to cover SmartGit-style workflows. Naming the feature
+        in an existing client helps frame scope.
+      placeholder: SmartGit -> Commit menu -> Rebase Interactively
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this to you?
+      options:
+        - Nice to have
+        - Would use weekly
+        - Would use daily
+        - Blocking my adoption of SmallGit
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and discussions for this.
+          required: true
+        - label: I am willing to help implement this (optional).
+          required: false

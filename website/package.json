@@ -1,0 +1,16 @@
+{
+  "name": "smallgit-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test:ui": "node scripts/test-ui.mjs",
+    "deploy": "../website.sh --deploy"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1",
+    "wrangler": "4.162.0"
+  }
+}

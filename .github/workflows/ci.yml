@@ -1,0 +1,104 @@
+name: CI
+
+# Paused. Test jobs run on `macos-14`, which GitHub bills at 10x, so a
+# single push spent a sizeable share of a private repo's monthly minutes to
+# re-check what a pre-commit `swift test` and `scripts/build-app.sh` have
+# already checked locally.
+#
+# `workflow_dispatch` keeps it runnable on demand from the Actions tab
+# without anything firing on its own. To turn automatic runs back on, put
+# the two triggers below back:
+#
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: swift test (macOS 14, Swift ${{ matrix.swift }})
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+      matrix:
+        swift: ["5.10"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check version metadata
+        run: ./make_version.sh --check
+
+      - name: Test release tooling (no GitHub writes)
+        run: python3 -B -m unittest discover -s SmallGit/scripts/tests -v
+
+      - name: Show toolchain
+        run: |
+          swift --version
+          git --version
+          xcodebuild -version
+
+      - name: Cache SwiftPM build
+        uses: actions/cache@v4
+        with:
+          path: |
+            SmallGit/.build
+            ~/Library/Caches/org.swift.swiftpm
+          key: spm-${{ runner.os }}-${{ matrix.swift }}-${{ hashFiles('SmallGit/Package.resolved', 'SmallGit/Package.swift') }}
+          restore-keys: |
+            spm-${{ runner.os }}-${{ matrix.swift }}-
+
+      - name: Configure git for integration tests
+        run: |
+          git config --global user.email "ci@smallgit.local"
+          git config --global user.name "SmallGit CI"
+          git config --global init.defaultBranch main
+
+      - name: Build
+        working-directory: SmallGit
+        run: swift build -c debug
+
+      - name: Test
+        working-directory: SmallGit
+        run: swift test --parallel --skip SmallGitUITests
+
+  ui-tests:
+    name: SwiftUI interactions and rendering (no desktop automation)
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run isolated UI suite
+        run: SmallGit/scripts/test-ui.sh
+
+      - name: Upload UI test report and rendered snapshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmallGit-ui-tests-${{ github.sha }}
+          path: SmallGit/.build/ui-tests/results/
+          retention-days: 14
+          if-no-files-found: warn
+
+  build-app:
+    name: Package .app bundle
+    runs-on: macos-14
+    needs: [test, ui-tests]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build app bundle (ad-hoc signed)
+        working-directory: SmallGit
+        run: scripts/build-app.sh --release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmallGit-app-${{ github.sha }}
+          path: release/SmallGit.app
+          retention-days: 14

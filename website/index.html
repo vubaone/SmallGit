@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f7f5ee" />
+        <title>{{SEO_TITLE}}</title>
+        <meta
+            name="description"
+            content="{{SEO_DESCRIPTION}}"
+        />
+        <link rel="canonical" href="https://smallgit.vuba.one/" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="alternate" type="text/markdown" href="/index.md" />
+        <link rel="describedby" type="text/plain" href="/llms.txt" />
+        <link rel="icon" type="image/png" href="/assets/small-potato.png" />
+        <link rel="stylesheet" href="/styles.css" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SmallGit" />
+        <meta property="og:title" content="{{SEO_TITLE}}" />
+        <meta
+            property="og:description"
+            content="{{SEO_DESCRIPTION}}"
+        />
+        <meta property="og:url" content="https://smallgit.vuba.one/" />
+        <meta
+            property="og:image"
+            content="https://smallgit.vuba.one/assets/smallgit-main-window.png"
+        />
+        <meta property="og:image:width" content="1567" />
+        <meta property="og:image:height" content="1084" />
+        <meta
+            property="og:image:alt"
+            content="SmallGit showing repositories, a side-by-side code diff and commit history on macOS"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{SEO_TITLE}}" />
+        <meta
+            name="twitter:description"
+            content="{{SEO_DESCRIPTION}}"
+        />
+        <meta
+            name="twitter:image"
+            content="https://smallgit.vuba.one/assets/smallgit-main-window.png"
+        />
+        <script type="application/ld+json">{{STRUCTURED_DATA}}</script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <div class="page-shell">
+            <header class="site-header">
+                <a class="wordmark" href="/" aria-label="SmallGit home">
+                    <svg
+                        width="25"
+                        height="29"
+                        viewBox="0 0 25 29"
+                        fill="none"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M6 7v14m0-5c0-6 13-2 13-9"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        />
+                        <circle cx="6" cy="5" r="3" fill="currentColor" />
+                        <circle cx="6" cy="24" r="3" fill="currentColor" />
+                        <circle cx="19" cy="5" r="3" fill="currentColor" />
+                    </svg>
+                    SmallGit<span class="byline">by VUBA</span>
+                </a>
+                <nav aria-label="Main navigation">
+                    <a href="https://vuba.one"
+                        >VUBA home <span aria-hidden="true">↗</span></a
+                    >
+                    <a href="#the-app">The app</a>
+                    <a href="#from-smartgit">From SmartGit</a>
+                    <a class="nav-source" href="{{SOURCE_URL}}"
+                        >{{SOURCE_LABEL}} <span aria-hidden="true">↗</span></a
+                    >
+                </nav>
+            </header>
+
+            <main id="main">
+                <section class="hero" aria-labelledby="hero-title">
+                    <div class="hero-text">
+                        <p class="eyebrow">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            A LITTLE GIT CLIENT FOR YOUR MAC
+                        </p>
+                        <h1 id="hero-title">
+                            SmallGit,<br /><em>Small Potato.</em>
+                        </h1>
+                        <p class="hero-description">
+                            A free, native, open-source Git client for macOS.<br
+                                class="wide-only"
+                            />
+                            A familiar alternative to SmartGit, made with
+                            SwiftUI.
+                        </p>
+                        <div class="hero-actions">
+                            <a
+                                class="button button-dark"
+                                href="{{DOWNLOAD_URL}}"
+                                >{{DOWNLOAD_LABEL}}
+                                <span aria-hidden="true">↗</span></a
+                            >
+                            <a class="text-link" href="#the-app"
+                                >Take a closer look
+                                <span aria-hidden="true">↓</span></a
+                            >
+                        </div>
+                        <p class="download-details">{{RELEASE_NOTE}}</p>
+                    </div>
+                    <figure class="potato-figure">
+                        <span class="orbit orbit-one" aria-hidden="true"></span>
+                        <span class="orbit orbit-two" aria-hidden="true"></span>
+                        <img
+                            src="/assets/small-potato.png"
+                            alt="One small, unassuming potato"
+                            width="1254"
+                            height="1254"
+                            fetchpriority="high"
+                        />
+                        <figcaption>
+                            A small potato.<br />A useful little app.
+                        </figcaption>
+                        <svg
+                            class="potato-arrow"
+                            width="70"
+                            height="54"
+                            viewBox="0 0 70 54"
+                            fill="none"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M65 47C29 50 9 36 13 10m0 0L4 20m9-10 9 9"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </figure>
+                </section>
+
+                <section
+                    id="the-app"
+                    class="app-section"
+                    aria-labelledby="app-title"
+                >
+                    <div class="section-topline">
+                        <h2 id="app-title">
+                            Your working tree. The whole picture.
+                        </h2>
+                        <span class="small-label"
+                            >BUILT WITH SWIFT + SWIFTUI</span
+                        >
+                    </div>
+                    <a
+                        class="app-image-link"
+                        href="/assets/smallgit-main-window.png"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="Open the full-size SmallGit screenshot in a new tab"
+                    >
+                        <img
+                            class="app-screenshot"
+                            src="/assets/smallgit-main-window.png"
+                            alt="SmallGit's main window: repository and branch sidebar, changed files, side-by-side diff, commit graph and command output"
+                            width="1567"
+                            height="1084"
+                        />
+                        <span class="image-zoom"
+                            >View full size
+                            <span aria-hidden="true">↗</span></span
+                        >
+                    </a>
+                    <p class="image-caption">
+                        <span>Repos, changes, history. All in one place.</span
+                        ><span>Actual app screenshot</span>
+                    </p>
+                </section>
+
+                <section
+                    class="features-section"
+                    aria-labelledby="features-title"
+                >
+                    <div class="section-intro">
+                        <p class="eyebrow">THE EVERYDAY GOOD STUFF</p>
+                        <h2 id="features-title">
+                            A little less fuss.<br />A little more
+                            <em>done.</em>
+                        </h2>
+                        <p>
+                            For the changes you make every day, and the history
+                            you need to make sense of.
+                        </p>
+                    </div>
+                    <div class="feature-list">
+                        <article class="feature-row">
+                            <span class="feature-number" aria-hidden="true"
+                                >01</span
+                            >
+                            <div>
+                                <h3>Commit exactly what you mean.</h3>
+                                <p>
+                                    Read diffs side by side. Stage a whole file,
+                                    a hunk, or a single line. Keep the rest for
+                                    later.
+                                </p>
+                                <span class="feature-tag"
+                                    >HEAD ↔ Index ↔ Working tree</span
+                                >
+                            </div>
+                        </article>
+                        <article class="feature-row">
+                            <span class="feature-number" aria-hidden="true"
+                                >02</span
+                            >
+                            <div>
+                                <h3>Find your way through history.</h3>
+                                <p>
+                                    Follow the commit graph, search changes,
+                                    manage branches, and tidy up with
+                                    interactive rebase and fixups.
+                                </p>
+                                <span class="feature-tag"
+                                    >Branches · Reflog · Worktrees</span
+                                >
+                            </div>
+                        </article>
+                        <article class="feature-row">
+                            <span class="feature-number" aria-hidden="true"
+                                >03</span
+                            >
+                            <div>
+                                <h3>Stay with your work.</h3>
+                                <p>
+                                    Group your repositories, resolve merge
+                                    conflicts, and open a terminal inside the
+                                    app. GitHub CLI sign-in fits right in.
+                                </p>
+                                <span class="feature-tag"
+                                    >Your repositories. Your workflow.</span
+                                >
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section
+                    id="from-smartgit"
+                    class="migration-section"
+                    aria-labelledby="migration-title"
+                >
+                    <div class="migration-heading">
+                        <p class="eyebrow">A FAMILIAR PLACE TO LAND</p>
+                        <h2 id="migration-title">A SmartGit alternative for macOS.</h2>
+                        <p>
+                            Bring your repository list along. No need to clone
+                            it all again.
+                        </p>
+                    </div>
+                    <ol class="migration-steps">
+                        <li>
+                            <span class="step-number">1</span>
+                            <h3>Find your setup</h3>
+                            <p>
+                                Choose <strong>Sync from SmartGit</strong> on
+                                the welcome screen or in the app menu.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <h3>Take a quick look</h3>
+                            <p>
+                                Review the repositories, groups, and any paths
+                                that are no longer on your Mac.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <h3>Make yourself at home</h3>
+                            <p>
+                                Choose <strong>Import</strong>. Your existing
+                                repositories appear in SmallGit.
+                            </p>
+                        </li>
+                    </ol>
+                    <p class="migration-note">
+                        Your SmartGit configuration stays untouched. Passwords
+                        are not imported.
+                    </p>
+                </section>
+
+                <section
+                    class="philosophy-section"
+                    aria-labelledby="philosophy-title"
+                >
+                    <p class="eyebrow">WHY A POTATO?</p>
+                    <h2 id="philosophy-title">
+                        Save your credits<br />for <em>bigger potatoes.</em>
+                    </h2>
+                    <blockquote>
+                        “Vibe-coded with AI agents. I built it, and you can too.
+                        But this one's a small potato. Save your AI credits for
+                        bigger potatoes.”
+                    </blockquote>
+                    <p class="quote-author">— VUBA, maker of SmallGit</p>
+                    <p class="philosophy-note">
+                        Free to use. Open source under MIT.<br />Take it, make
+                        it yours, and build something good.
+                    </p>
+                </section>
+
+                <section class="faq-section" aria-labelledby="faq-title">
+                    <div class="section-intro">
+                        <p class="eyebrow">BEFORE YOU DIG IN</p>
+                        <h2 id="faq-title">
+                            A few small<br /><em>details.</em>
+                        </h2>
+                    </div>
+                    <div class="faq-list">
+                        <details>
+                            <summary>
+                                Is SmallGit free?<span aria-hidden="true">+</span>
+                            </summary>
+                            <p>
+                                Yes. SmallGit is a free, open-source Git GUI for
+                                macOS, built with Swift and SwiftUI. The MIT
+                                license permits personal and commercial use,
+                                with the required copyright and license notices.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                What do I need to run SmallGit?<span
+                                    aria-hidden="true"
+                                    >+</span
+                                >
+                            </summary>
+                            <p>
+                                macOS 14 or later and Git installed on your Mac.
+                                The current prebuilt download is for Apple
+                                silicon (arm64). Intel and universal downloads
+                                are not available yet.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                How do I install it?<span aria-hidden="true"
+                                    >+</span
+                                >
+                            </summary>
+                            <p>
+                                {{INSTALL_TEXT}} Unzip the download and drag
+                                SmallGit.app into Applications. The release
+                                includes a SHA-256 checksum and build details.
+                            </p>
+                            <p>
+                                The download is signed with Developer ID and
+                                notarized by Apple, with the notarization ticket
+                                included in the app. The release pipeline checks
+                                Gatekeeper acceptance after extracting the final ZIP.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                Does it replace every SmartGit feature?<span
+                                    aria-hidden="true"
+                                    >+</span
+                                >
+                            </summary>
+                            <p>
+                                SmallGit focuses on common everyday Git
+                                workflows. It is an independent project.
+                                Cherry-pick UI and bisect are still in progress;
+                                dedicated GPG signing, Git LFS, and pull-request
+                                interfaces are planned. Interactive rebase does
+                                not yet support reword or edit.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                Can I use the code in my own project?<span
+                                    aria-hidden="true"
+                                    >+</span
+                                >
+                            </summary>
+                            <p>
+                                Yes. SmallGit uses the MIT license. Keep the
+                                required copyright and license notices. A credit
+                                to VUBA and a link back to SmallGit would be
+                                appreciated; that extra public credit is
+                                optional.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>
+                                Where can I report a bug?<span
+                                    aria-hidden="true"
+                                    >+</span
+                                >
+                            </summary>
+                            <p>
+                                {{SUPPORT_TEXT}} Include your app version, macOS
+                                version, and steps to reproduce. Please remove
+                                private repository details from screenshots and
+                                logs. For security issues, email
+                                <a href="mailto:dev@vuba.one">dev@vuba.one</a>
+                                privately.
+                            </p>
+                        </details>
+                    </div>
+                </section>
+
+                <section
+                    id="download"
+                    class="download-section"
+                    aria-labelledby="download-title"
+                >
+                    <div>
+                        <p class="eyebrow">ONE SMALL THING, SORTED.</p>
+                        <h2 id="download-title">
+                            Your next commit<br />starts here.
+                        </h2>
+                    </div>
+                    <div class="download-end">
+                        <a
+                            class="button button-dark"
+                            href="{{DOWNLOAD_END_URL}}"
+                            >{{DOWNLOAD_END_LABEL}}
+                            <span aria-hidden="true">↗</span></a
+                        >
+                        <p>{{RELEASE_NOTE}}</p>
+                    </div>
+                </section>
+            </main>
+            <footer class="site-footer">
+                <a class="wordmark footer-wordmark" href="/"
+                    >SmallGit<span class="byline">Small Potato.</span></a
+                >
+                <p>
+                    Made by <a href="https://vuba.one">VUBA</a>, with a little
+                    help from AI.
+                </p>
+                <div>
+                    <a href="https://vuba.one"
+                        >VUBA home <span aria-hidden="true">↗</span></a
+                    ><a href="{{SOURCE_URL}}">{{SOURCE_LABEL}} ↗</a
+                    ><a href="https://opensource.org/license/mit"
+                        >MIT License</a
+                    >
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

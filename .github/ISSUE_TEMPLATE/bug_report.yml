@@ -1,0 +1,100 @@
+name: Bug report
+description: Report a defect in SmallGit
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. Please fill in the fields
+        below so we can reproduce the problem quickly.
+
+        If your issue is a security concern, please email **dev@vuba.one**
+        instead of filing a public report.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A one-line description of the bug.
+      placeholder: Staging a hunk in an untracked file silently fails.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: |
+        A minimal sequence of steps against a temporary test repository.
+        Include the commands needed to create it. Use fictional data and
+        remove private repository names, paths, credentials, and remote URLs.
+      placeholder: |
+        1. Create a temporary Git repository with one commit and open it in SmallGit
+        2. Edit `src/main.swift`, add three lines
+        3. Right-click the unstaged hunk -> "Stage hunk"
+        4. Observe: the hunk does not move to the staged side
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      placeholder: The hunk moves to the staged side and the file shows as partially staged.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      placeholder: Nothing happens. No entry appears in the output log.
+    validations:
+      required: true
+
+  - type: input
+    id: smallgit-version
+    attributes:
+      label: SmallGit version
+      description: Shown in About -> SmallGit, or the commit hash if built from source.
+      placeholder: 26.11.01 (261101)
+    validations:
+      required: true
+
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS version
+      placeholder: 14.4 (Sonoma)
+    validations:
+      required: true
+
+  - type: input
+    id: git-version
+    attributes:
+      label: Git version
+      description: Output of `git --version` on the same machine.
+      placeholder: git version 2.43.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output log
+      description: |
+        Open the output log window (double-tap on the status bar or
+        View -> Output Log) and paste relevant lines after removing tokens,
+        private URLs, usernames, and personal paths.
+      render: shell
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I can reproduce this against a fresh checkout of `main`.
+          required: false

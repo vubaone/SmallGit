@@ -1,0 +1,1 @@
+1. on log view, double tap on a file not show compare

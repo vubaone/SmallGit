@@ -1,0 +1,55 @@
+# SwiftFormat configuration for SmallGit
+# https://github.com/nicklockwood/SwiftFormat
+#
+# Run: swiftformat .
+# Install: brew install swiftformat
+
+# Swift language target
+--swiftversion 5.10
+
+# Layout
+--indent 4
+--linebreaks lf
+--maxwidth 100
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+
+# Imports
+--importgrouping testable-bottom
+
+# Spacing / parens
+--ranges no-space
+--operatorfunc spaced
+--commas always
+--trailingclosures
+--decimalgrouping ignore
+--binarygrouping ignore
+--hexgrouping ignore
+--hexliteralcase uppercase
+
+# Style
+--self init-only
+--redundanttype inferred
+--stripunusedargs closure-only
+--patternlet inline
+--shortoptionals always
+--emptybraces no-space
+
+# Headers / file-level
+--header strip
+--fragment false
+
+# Disabled rules (deliberate)
+# - sortImports: imports are grouped manually by intent (Foundation first,
+#   then framework, then internal); alphabetization makes that harder to
+#   maintain.
+# - blankLinesAtStartOfScope: kept manual; some types use a leading blank
+#   to separate the type declaration from its first member when there are
+#   many properties.
+# - wrapMultilineStatementBraces: SwiftUI body / closure builder code
+#   reads better without the forced brace wrap.
+--disable sortImports,blankLinesAtStartOfScope,wrapMultilineStatementBraces
+
+# Exclude generated / vendored
+--exclude .build,SmallGit/.build,SmallGit/.swiftpm,example

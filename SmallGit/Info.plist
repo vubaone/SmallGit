@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key>
+    <string>SmallGit</string>
+    <key>CFBundleName</key>
+    <string>SmallGit</string>
+    <key>CFBundleExecutable</key>
+    <string>SmallGit</string>
+    <key>CFBundleIdentifier</key>
+    <string>one.vuba.smallgit</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>26.11.01</string>
+    <key>CFBundleVersion</key>
+    <string>261101</string>
+    <key>CFBundleGetInfoString</key>
+    <string>SmallGit by VUBA &lt;dev@vuba.one&gt;</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>Copyright © 2026 VUBA. Contact: dev@vuba.one</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>SmallGit opens repositories in Terminal and your preferred editor via Apple Events.</string>
+    <!-- SmallGit restores the main window's frame itself (see
+         WindowPlacement / MainWindowStateHandler), which lets it pick the
+         right display when the monitor arrangement has changed. macOS Resume
+         would re-apply its own remembered frame on top of ours, so it stays
+         off. -->
+    <key>NSQuitAlwaysKeepsWindows</key>
+    <false/>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.developer-tools</string>
+</dict>
+</plist>

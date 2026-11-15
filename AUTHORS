@@ -1,0 +1,33 @@
+SmallGit Authors
+================
+
+This file lists the individuals (and AI collaborators) who have contributed
+to SmallGit. The order within each section is roughly chronological by first
+contribution.
+
+When you submit your first pull request, please add yourself to the
+Contributors section in the same PR.
+
+
+Maintainers
+-----------
+
+VUBA <dev@vuba.one>           — project founder, primary maintainer
+
+
+Contributors
+------------
+
+(none yet — open a PR and add yourself here)
+
+
+AI collaborators
+----------------
+
+SmallGit is built with substantial help from AI assistants. They are not
+copyright holders under MIT — the human who submits a change remains
+accountable for it — but their contributions are tracked here for
+transparency.
+
+Anthropic Claude              — architecture, refactors, tests, OSS hygiene
+OpenAI Codex                  — feature work, parsers, UI components
